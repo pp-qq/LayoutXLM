@@ -55,12 +55,10 @@ if __name__ == "__main__":
         id2label[i] = label
 
     model = AutoModelForTokenClassification.from_pretrained(
-        "microsoft/layoutlmv2-base-uncased", num_labels=len(label2id)
+        "microsoft/layoutxlm-base", num_labels=len(label2id)
     )
 
-    tokenizer = AutoTokenizer.from_pretrained(
-        "microsoft/layoutlmv2-base-uncased"
-    )
+    tokenizer = AutoTokenizer.from_pretrained("microsoft/layoutxlm-base")
 
     # Set id2label and label2id
     model.config.id2label = id2label
